@@ -1,6 +1,5 @@
 from django.shortcuts import render
 import random
-from django.views import View
 from django.views.generic import TemplateView
 
 
@@ -31,11 +30,14 @@ class ContactView(View):
         return render(request, 'contact.html', context)
 '''
 
-class ContactTemplateView(TemplateView):
-    template_name = 'contact.html'
-
-class AboutTemplateView(TemplateView):
-    template_name = 'about.html'
-
-class HomeTemplateView(TemplateView):
+class HomeView(TemplateView):
     template_name = 'home.html'
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(HomeView, self).get_context_data(*args, **kwargs)
+        nums = random.randint(0, 10000)
+        nums2 = random.randint(0, 20000)
+        nums3 = random.randint(0, 30000)
+        some_list = [nums, nums2, nums3]
+        context = {'nums': nums, 'some_list': some_list}
+        return context
