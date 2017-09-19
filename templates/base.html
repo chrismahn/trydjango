@@ -3,20 +3,12 @@
     <head>
     </head>
     <body>
-    <h1>Hello Nurses</h1>
-    <p>This is html syntax</p>
-    <P>The random value is {{ nums }}</P>
-<p>
-    {% for some_item in some_list %}
-        {% if some_item|divisibleby:'2' %}
-        even number
-        {{ some_item }}<br>
-        {% endif %}
-    {% endfor %}
-    </p>
+<h1>MuyPicky.com</h1>
+<div class="container">
+    {% block content %}
+        <h1>Howdy dooo!!!!</h1>
+    {% endblock %}
 
-    <p>
-        some items is {{ some_item }}
-    </p>
+</div>
     </body>
     </html>
