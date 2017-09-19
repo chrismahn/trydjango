@@ -13,18 +13,18 @@ def home(request):
     context = {'nums': nums, 'some_list': some_list}
     return render(request, 'home.html', context)
 
-def home2(request):
+def about(request):
     nums = random.randint(0, 10000)
     nums2 = random.randint(0, 20000)
     nums3 = random.randint(0, 30000)
     some_list = [nums, nums2, nums3]
     context = {'nums': nums, 'some_list': some_list}
-    return render(request, 'home2.html', context)
+    return render(request, 'about.html', context)
 
-def home3(request):
+def contact(request):
     nums = random.randint(0, 10000)
     nums2 = random.randint(0, 20000)
     nums3 = random.randint(0, 30000)
     some_list = [nums, nums2, nums3]
     context = {'nums': nums, 'some_list': some_list}
-    return render(request, 'home3.html', context)
+    return render(request, 'contact.html', context)
