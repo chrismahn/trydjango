@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import random
 from django.views import View
+from django.views.generic import TemplateView
 
 
 # Create your views here.
@@ -22,7 +23,19 @@ def contact(request):
     context = {}
     return render(request, 'contact.html', context)
 
+'''
+## create  a class based View ##
 class ContactView(View):
     def get(self, request, *args, **kwargs):
         context = {}
         return render(request, 'contact.html', context)
+'''
+
+class ContactTemplateView(TemplateView):
+    template_name = 'contact.html'
+
+class AboutTemplateView(TemplateView):
+    template_name = 'about.html'
+
+class HomeTemplateView(TemplateView):
+    template_name = 'home.html'
