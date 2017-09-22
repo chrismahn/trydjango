@@ -2,8 +2,13 @@
 
 {% block title %}Restaurants{% endblock %}
 {% block content %}
+
+
+
 <h1>Restaurant Name: {{ object.name }}</h1> <small>Category: {{ object.category }}</small>
     <h1>Location: {{ object.location }} </h1>
     <p>{{ object.timestamp }}, {{ object.updated|timesince }} ago</p>
+
+
 
 {% endblock %}
