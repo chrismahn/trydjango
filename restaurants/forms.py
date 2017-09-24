@@ -1,5 +1,6 @@
 from django import forms
 from .models import RestaurantLocation
+from.validators import validate_category
 
 
 class RestaurantCreateForm(forms.Form):
@@ -15,7 +16,8 @@ class RestaurantCreateForm(forms.Form):
 
 
 class RestaurantLocationCreateForm(forms.ModelForm):
-    email = forms.EmailField()
+    #email = forms.EmailField()
+    category = forms.CharField(required=False, validators=[validate_category])
     class Meta:
         model = RestaurantLocation
         fields = [
@@ -34,5 +36,4 @@ class RestaurantLocationCreateForm(forms.ModelForm):
         email = self.cleaned_data.get('email')
         if 'edu' in email:
             raise forms.ValidationError('We do not accept edu emails')
-
         return email
