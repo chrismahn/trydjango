@@ -18,5 +18,7 @@ CATEGORIES = ['Mexican', 'Asian', 'Fast Food', 'Misc']
 
 
 def validate_category(value):
-    if not value in CATEGORIES:
+    cat = value.capitalize()    # allow non lower case entries
+    if not value in CATEGORIES and not cat in CATEGORIES:
         raise ValidationError(f'{value} not a valid category')
+
